@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在我心中你最美</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            background-image: url(beijing.jpg);
+            background-repeat: no-repeat;
+            /* 设置背景图片大小,宽度  高度 */
+            background-size: 100% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 视角与3D元素之间的距离 */
+            perspective: 1000px;
+            /* 改变视角的位置 默认值50% 50% */
+            perspective-origin: 50% 50%;
+        }
+
+        .font {
+            width: 600px;
+            height: 100px;
+            color: red;
+            font-size: 12px;
+            text-align: center;
+           
+            /* text-decoration: underline; */
+            text-indent: 2em;
+            /* line-height:80px;  */
+            position: absolute;
+            left: 30%;
+            top: 0;
+            
+        
+
+        }
+
+        main {
+            width: 300px;
+            height: 300px;
+            /* background-color: rgba(255, 0, 13, 0.3); */
+            /* 保留内部子元素的3D转换效果 */
+            transform-style: preserve-3d;
+            animation-name: zhuan;
+            animation-duration: 12s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes zhuan {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+            25% {
+                transform: rotateX(90deg) rotateY(90deg);
+            }
+            50% {
+                transform: rotateX(180deg) rotateY(180deg);
+            }
+            75% {
+                transform: rotateX(270deg) rotateY(270deg);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        main>div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /* 设置不同样式切换时所需的过度时间 */
+            transition-duration: 2s;
+        }
+
+        section {
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            left: 25%;
+            top: 25%;
+            transform-style: preserve-3d;
+            transition-property: none;
+            display:flex;
+        }
+
+        section>div {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+
+
+        }
+
+        .zhongzhong {
+            background-image: url(goods.webp);
+            background-size: 150px;
+            background-repeat: no-repeat;
+            transform: rotateY(180deg) translateZ(25px);
+
+        }
+
+        .zhongjian {
+            background-image: url(forever.jpg);
+            background-size: 150px;
+            transform: rotateY(180deg) translateZ(25px);
+        }
+
+        .qianqian {
+
+            background-image: url(xiaoxiannv.jpg);
+            background-size: 150px;
+            transform: rotateY(180deg) translateZ(75px);
+        }
+
+        .houhou {
+            background-image: url(nanshen.webp);
+            background-size: 150px;
+            transform: translateZ(75px);
+        }
+
+        .shangshang {
+            background-image: url(good.jpg);
+            background-size: 150px;
+            transform: rotateX(90deg) translateZ(75px);
+        }
+
+        .xiaxia {
+            background-image: url(baqi.jpg);
+            background-size: 150px;
+            transform: rotateX(-90deg) translateZ(75px);
+        }
+
+        .zuozuo {
+            background-image: url(yezi.jpg);
+            background-size: 150px;
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+
+        .youyou {
+            background-image: url(lihaile.jpg);
+            background-size: 150px;
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        .zhizunbao {
+            background-image: url(yaojing.jpg);
+            background-size: 150px;
+            transform: rotateY(90deg) translateZ(75px);
+            background-repeat: no-repeat;
+        }
+
+        .zixia {
+            background-image: url(beautiful.jpg);
+            background-size: 150px;
+            transform: rotateY(90deg) translateZ(75px);
+            background-repeat: no-repeat;
+        }
+
+        main:hover .houhou {
+            transform: translateZ(150px);
+        }
+
+        main:hover .qianqian {
+            transform: rotateY(180deg) translateZ(150px);
+        }
+
+        main:hover .shangshang {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        main:hover .xiaxia {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        main:hover .youyou {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        main:hover .zuozuo {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        main:hover .zhongzhong {
+            transform: rotateY(90deg) translateZ(45px);
+        }
+
+        main:hover .zhongjian {
+            transform: rotateY(360deg) translateZ(45px);
+        }
+
+        main:hover .zixia {
+            transform: rotateY(180deg) translateZ(45px);
+        }
+
+        main:hover .zhizunbao {
+            transform: rotateY(270deg) translateZ(45px);
+        }
+
+
+
+
+
+        .qian {
+            background-image: url(meijiandao.jpg);
+            background-size: 300px;
+            transform: rotateY(180deg) translateZ(150px);
+            opacity: 0.8;
+
+        }
+
+        .hou {
+            background-image: url(bangjile.jpg);
+            background-size: 300px;
+            /* 3d 图形转换   沿z轴  平移 */
+            transform: translateZ(150px);
+            opacity: 0.8;
+
+        }
+
+        .shang {
+            background-image: url(twopeople.jpg);
+            background-size: 300px;
+            background-repeat: no-repeat;
+            transform: rotateX(90deg) translateZ(150px);
+            opacity: 0.8;
+
+
+        }
+
+        .xia {
+            background-image: url(memeda.jpg);
+            transform: rotateX(-90deg) translateZ(150px);
+            background-size: 300px;
+            opacity: 0.8;
+
+        }
+
+        .zuo {
+            background-image: url(niubai.jpg);
+            background-size: 300px;
+            transform: rotateY(-90deg) translateZ(150px);
+            opacity: 0.8;
+
+        }
+
+        .you {
+            background-image: url(xiaonuozha.webp);
+            /* background-repeat: no-repeat; */
+            background-size: 300px;
+            transform: rotateY(90deg) translateZ(150px);
+            opacity: 0.8;
+
+        }
+
+        /* :hover  设置鼠标悬停效果,即鼠标在标签之上时,样式发生变化 */
+
+        main:hover .hou {
+            transform: translateZ(300px);
+        }
+
+        main:hover .qian {
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        main:hover .shang {
+            transform: rotateX(90deg) translateZ(300px);
+        }
+
+        main:hover .xia {
+            transform: rotateX(-90deg) translateZ(300px);
+        }
+
+        main:hover .you {
+            transform: rotateY(90deg) translateZ(300px);
+        }
+
+        main:hover .zuo {
+            transform: rotateY(-90deg) translateZ(300px);
+        }
+
+        .demo {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- main 是立方体的容器标签 -->
+    <main>
+        <div class="qian"></div>
+        <div class="hou"></div>
+        <div class="shang"></div>
+        <div class="xia"></div>
+        <div class="zuo"></div>
+        <div class="you"></div>
+        <section>
+            <div class="qianqian"></div>
+            <div class="houhou"></div>
+            <div class="shangshang"></div>
+            <div class="xiaxia"></div>
+            <div class="zuozuo"></div>
+            <div class="youyou"></div>
+            <div class="zhongzhong"></div>
+            <div class="zhongjian"></div>
+            <div class="zixia"></div>
+            <div class="zhizunbao"></div>
+        </section>
+    </main>
+    <div class="demo">
+        <audio autoplay controls>
+            <source src="丫头.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <div class="font">
+        <h1>于千万人之中遇见你所要遇见的人，于二十年来之中,</h1>
+       
+        <h1>在时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了,</h1>
+       
+       <h1>那也没有别的话可说，惟有轻轻地说一声：“噢，你也在这里，是你就好！”</h1>
+    </div>
+
+</body>
+
+</html>
